@@ -2,7 +2,7 @@
 
 ## Objectives
 
-* Create JMeter Load test
+* Create [JMeter](https://jmeter.apache.org/) Load test
 * To test a table of 100,000 rows with randomized insert/update/delete a few records at a time
 * Each thread user should use a random range of pk values to avoid database dead-locks during the test
 
