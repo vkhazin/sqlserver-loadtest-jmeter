@@ -58,20 +58,13 @@ GO
 INSERT [dbo].[FareTypes] ([FareTypeId], [FareTypeAbbr], [Description], [FlatFareAmt], [FlatRate], [DistanceRate], [PolygonRate], [TimeRate], [PolyTypeId], [PrepaidReq], [FareAdjustDiffZon], [FareAdjustSameZon], [DistanceLimitSameZon], [DistanceLimitDiffZon], [NumCode], [FareMode], [FareCalcType], [VariationOf], [MinFare], [MaxFare], [RoundFare], [DistanceLimit], [RoundDirection], [Accuracy], [InActive]) VALUES (1, N'STA', N'Standard Fare', NULL, 2, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
 ```
 
-### DML Required
-
-* An sql script that will generate 100,000 records in the table
+### [DML to populate records](./populate-records.sql)
 
 ## JMeter Setup
 
+* Download and install [Sql Server Jdbc Driver](https://stackoverflow.com/questions/49732923/how-to-resolve-error-cannot-load-jdbc-driver-class-displayed-in-jmeter-4-0)
 * Store all parameters in the User Defined Variables - nothing is hard-coded
 * Randomize the pk values range for insert/update/delete operation between threads to avoid dead-locks
 * Collect the test results using `Aggregate Report` collector
 * Collect the errors-only from the test using `View Results in Table` collector to monitor database errors
 
-## Deliverables
-
-* Sql Script to generate 100,000 records
-* JMeter file
-* README.MD using markdown documentation on how to setup and run the test
-* A walk through using shared screen running the test on a new environment 
